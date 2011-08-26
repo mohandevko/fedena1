@@ -1,0 +1,17 @@
+<div id="logo">
+  <%= image_tag "TC-logo-1.jpg" %> 
+</div>
+
+<div id="session">
+  <% if signed_in? %>
+    <%= link_to "Signout", destroy_user_session_path %>
+  <% else %>
+    <%= render :partial => "layouts/login_form" %>
+  <% end %>
+</div>
+
+<div id="navigation-menu">
+  <ul class="ui-helper-clearfix">
+    <li class="selected"><%= link_to "Home", root_path %></li>
+  </ul>
+</div>

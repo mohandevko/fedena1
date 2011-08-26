@@ -6,16 +6,17 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.rememberable
       t.trackable
       
-      t.string :name
-      t.boolean :contractor
-      t.boolean :employer
-      t.integer :credits
+      t.string :first_name, :limit => 50
+      t.string :last_name, :limit => 50
+      t.string :phone, :limit => 15
+      t.string :location, :limit => 50
+      t.boolean :email_subscription
+      t.string :avatar_file_name
 
       # t.encryptable
       # t.confirmable
       # t.lockable :lock_strategy => :failed_attempts, :unlock_strategy => :both
       # t.token_authenticatable
-
 
       t.timestamps
     end

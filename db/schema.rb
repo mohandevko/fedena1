@@ -23,10 +23,12 @@ ActiveRecord::Schema.define(:version => 20110824162031) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.string   "name"
-    t.boolean  "contractor"
-    t.boolean  "employer"
-    t.integer  "credits"
+    t.string   "first_name",             :limit => 50
+    t.string   "last_name",              :limit => 50
+    t.string   "phone",                  :limit => 15
+    t.string   "location",               :limit => 50
+    t.boolean  "email_subscription"
+    t.string   "avatar_file_name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

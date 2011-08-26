@@ -1,0 +1,10 @@
+<%= form_for(:user, :url => update_path, :html => {:method => "PUT", :multipart => "true"}) do |f| %> 
+   
+   Contractor: <%= f.check_box :contractor  %>
+   Employer: <%= f.check_box :employer  %>
+   
+   Avathar: <%= f.file_field :avatar %>
+
+   <%= f.submit %> 
+<% end %> 
+

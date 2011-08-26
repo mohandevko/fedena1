@@ -1,0 +1,26 @@
+body {
+  margin:0;
+  padding:0;
+  font: 80% "Trebuchet MS",sans-serif;
+  background-image: url(/stylesheets/ui-darkness/images/ui-bg_flat_30_cccccc_40x100.png);
+}
+
+.wrapper {
+  width: 900px;
+  margin: auto;
+  position: relative;
+}
+
+#header {
+  background-color: #37383C;
+}
+
+#content {
+  min-height: 435px;
+}
+
+#footer {
+  background-color: #37383C;
+  height: 50px;
+  color: #ffffff;
+}
