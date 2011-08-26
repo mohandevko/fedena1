@@ -1,2 +1,17 @@
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
+<% if notice.present? %>
+  <div class="ui-state-highlight ui-corner-all" style="margin-top: 20px; padding: 0 .7em;">
+    <p class="notice">
+      <span class="ui-icon ui-icon-info" style="float: left; margin-right: .3em;"></span>
+      <%= notice %>
+    </p>
+  </div>
+<% end %>
+
+<% if alert.present? %>
+  <div class="ui-state-error ui-corner-all" style="margin-top: 20px; padding: 0 .7em;">
+    <p class="alert">
+      <span class="ui-icon ui-icon-alert" style="float: left; margin-right: .3em;"></span>
+      <%= alert %>
+    </p>
+  </div>
+<% end %>

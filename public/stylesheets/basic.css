@@ -8,3 +8,7 @@ input[type=submit], button {
   color: #555555;
   padding: 3px 15px;
 }
+
+.notice, .alert {
+  margin: 5px;
+}
