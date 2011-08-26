@@ -3,6 +3,7 @@ body {
   padding:0;
   font: 80% "Trebuchet MS",sans-serif;
   background-image: url(/stylesheets/ui-darkness/images/ui-bg_flat_30_cccccc_40x100.png);
+  color: #333333;
 }
 
 .wrapper {
@@ -20,7 +21,6 @@ body {
 }
 
 #footer {
-  background-color: #37383C;
-  height: 50px;
-  color: #ffffff;
+  border-top: 1px solid #37383C;
+  padding: 10px 0;
 }

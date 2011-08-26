@@ -1,3 +1,14 @@
 a {
   color: dodgerblue;
 }
+
+input[type=submit], button {
+  background: none repeat scroll 0 0 #EEEEEE;
+  border: 2px solid #555555;
+  color: #555555;
+  padding: 3px 15px;
+}
+
+.notice, .alert {
+  margin: 5px;
+}
