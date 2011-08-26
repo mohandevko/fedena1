@@ -1,0 +1,29 @@
+#signup-page {
+  padding-bottom: 20px;
+}
+
+#signup-form {
+  float: left;
+  margin-left: 100px;
+}
+
+#social-links {
+  float: right;
+  margin-right: 100px;
+  padding-top: 10px;
+}
+
+#continue {
+  text-align: center;
+}
+
+#social-links a {
+  background: none repeat scroll 0 0 #EEEEEE;
+  border: 2px solid #555555;
+  color: #555555;
+  display: block;
+  margin-bottom: 15px;
+  padding: 3px 15px;
+  text-align: center;
+  text-decoration: none;
+}
