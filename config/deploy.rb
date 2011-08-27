@@ -1,5 +1,6 @@
 set :default_stage, "staging"
 require 'capistrano/ext/multistage'
+require 'bundler/capistrano'
 
 set :application, "tech-credentials"
 set :repository,  "git@dine-media.com:tech-credentials.git"
