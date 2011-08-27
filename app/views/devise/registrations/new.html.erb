@@ -31,9 +31,9 @@
         
         <div id="social-links">
           <h3>Signinwith your Other Accounts</h3>
-          <%= link_to "LinkedIn", "" %>
-          <%= link_to "Facebook", "" %>
-          <%= link_to "Twitter", "" %>
+          <%= link_to "LinkedIn", user_omniauth_authorize_path(:linked_in) %>
+          <%= link_to "Facebook", user_omniauth_authorize_path(:facebook) %>
+          <%= link_to "Twitter", user_omniauth_authorize_path(:twitter) %>
         </div>
       </div>
       
