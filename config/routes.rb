@@ -6,5 +6,7 @@ TechCredentials::Application.routes.draw do
     end
   # --------------------------------------------------------
   
+  resources :users, :only => [:edit, :update, :show]
+  
   root :to => "home#index"
 end

@@ -20,6 +20,16 @@ body {
   min-height: 435px;
 }
 
+.content-left {
+  float: left;
+  width:70%;
+}
+
+.content-right {
+  float: right;
+  width:30%;
+}
+
 #footer {
   border-top: 1px solid #37383C;
   padding: 10px 0;
