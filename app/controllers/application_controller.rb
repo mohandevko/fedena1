@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
     if current_user.sign_in_count <= 1 and current_user.email.nil?
       user_path(current_user)
     else
-      dashboard_user_path(current_user )
+      dashboard_user_path(current_user)
     end
   end
 end
