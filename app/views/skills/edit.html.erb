@@ -1,0 +1,10 @@
+<h2> Edit Skills </h2>
+
+<% form_for :skill, :url => skill_path(current_user), :html => { :method => "PUT" } do |f| %>
+
+  user_id:<%= f.text_field :user_id, :value => @user.id %> <br />
+  Name:<%= f.text_field :name, :value => @skill.name %> <br />
+  Rating:<%= f.text_field :rating %> <br />
+  <%= f.submit %>
+
+<% end %>

@@ -1,0 +1,15 @@
+<h2> Work Histories </h2>
+
+<% @wk.each do |f| %> 
+  title: <%= f.title %><br/>
+  Company: <%= f.company %><br/>
+  Description: <%= f.description %><br/>
+  Start-date: <%= f.start_date %></br>
+  End-date: <%= f.end_date %><br/>
+  <%= link_to "edit", edit_work_history_path(f) %>
+  <%= link_to "Delete", work_history_path(f), :method => "DELETE" %> 
+  <%= link_to 'show', work_history_path(f) %><br/>
+  ================================================<br/>
+<% end %> 
+
+<%= link_to "new", new_work_history_path %>

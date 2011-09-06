@@ -1,16 +1,25 @@
 class UsersController < ApplicationController
 
   def show
-    @user = current_user
+    @user = User.find(params[:id])
+    @skills = current_user.skills
+    @work_histories = current_user.work_histories
   end
 
   def edit
-    @user = current_user
+      @user = current_user
   end
   
   def update
-    @user.update_attributes(params[:user])
+    puts "==========================================="
+      puts params.inspect
+    puts "==========================================="
+    current_user.update_attributes(params[:user])
     redirect_to :action => 'show'
+  end
+  
+  def dashboard
+    
   end
 
 end

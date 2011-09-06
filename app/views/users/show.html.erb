@@ -1,58 +1,61 @@
-<h2>Your dashboard</h2>
-
+<h2>Profile</h2>
 <div class="ui-helper-clearfix">
   <div class="content-left">
-    
     <div class="content">
+    <%= image_tag @user.avatar.url(:thumb) %><br/>
+      <%= link_to "edit", edit_user_path(current_user) %>
+      
+      <%= @user.location %><br>Company work for
+      <%= @user.mission_statement %>
       <div class="content">
-        <h4>Profile Quick Overview</h4><br/>
-        <%= current_user.email %>
-        <%= current_user.first_name %><br/>
-        <%= current_user.last_name %><br/>
-        <%= current_user.phone %>
+        <%= @user.mission_statement %>
       </div>
+
       <div class="content">
-        Your Ratings Breakdown/Score
+        Shared contacts
       </div>
+      
       <div class="content">
-        My Connections - Recently updated
+        Work history<br/>
+        <%= link_to "Work_history", work_histories_path %><br/>
+        
+        <% @work_histories.each do |f| %>
+          Job Title: <%= f.title %><br/>
+          Description: <%= f.description %><br/>
+          Start-Date: <%= f.start_date %><br/>
+          End-Date: <%= f.end_date %><br/>
+          ===========================<br/>
+        <% end %>
+        
       </div>
+      
       <div class="content">
-        Suggested Contacts
+        Skillz <%= link_to "skills", skills_path %><br/>
+       <% @skills.each do |f| %>
+          Skill:<%= f.name %> Rating:<%= f.rating  %><br/>
+       <% end %>
       </div>
+      
       <div class="content">
-        Recommended Positions [Apply] [Suggest]
+        Education
       </div>
-      <div class="content">
-        My Skillz/Keywords [edit] [promote]
-      </div>
+      
     </div>
   </div>
 
   <div class="content-right">
-
     <div class="content">
-      <div class="content">
-        Search
-      </div>
-      <div class="content">
-        Profile Progress
-      </div>
-      <div class="content">
-        New Messages
-      </div>
-      <div class="content">
-        Profile Meta Stats
-      </div>
-      <div class="content">
-        View Profile
-      </div>
-      <div class="content">
-        Add Position
-      </div>
-      <div class="content">
-        Advertisements?
-      </div>
+     Search <form  method="get">
+			<input value="" name="s" id="s" />
+			<input src="http://img150.imageshack.us/img150/6236/searchbuttonma4.gif" type="submit" alt="SEARCH" id="searchbutton" name="searchbutton"/>
+	</form><br/>
+     overall rating<br/>
+     view portfolio<br/>
+     availability<br/>
+      recomended for job<br/>
+      send messages<br/>
+      social media accounts<br/>
+      advertisements?
     </div>
   </div>
 </div>

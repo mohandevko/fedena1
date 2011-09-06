@@ -10,13 +10,21 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110827043618) do
+ActiveRecord::Schema.define(:version => 20110906055227) do
 
   create_table "authorizations", :force => true do |t|
     t.integer  "user_id"
     t.string   "provider"
     t.string   "uid"
     t.text     "details"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "skills", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "name"
+    t.integer  "rating"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -40,8 +48,20 @@ ActiveRecord::Schema.define(:version => 20110827043618) do
     t.string   "avatar_file_name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "mission_statement"
   end
 
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
+
+  create_table "work_histories", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "title"
+    t.string   "company"
+    t.text     "description"
+    t.date     "start_date"
+    t.date     "end_date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end

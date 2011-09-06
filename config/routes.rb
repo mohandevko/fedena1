@@ -5,8 +5,13 @@ TechCredentials::Application.routes.draw do
       get '/users/auth/:provider' => 'devise/omniauth#passthru'
     end
   # --------------------------------------------------------
-  
-  resources :users, :only => [:edit, :update, :show]
+  resources :skills
+  resources :work_histories
+  resources :users, :only => [:edit, :update, :show] do
+    member do
+      get :dashboard
+    end
+  end
   
   root :to => "home#index"
 end
