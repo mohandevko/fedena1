@@ -4,9 +4,8 @@
     <div class="content">
     <%= image_tag @user.avatar.url(:thumb) %><br/>
       <%= link_to " Edit Profile", edit_user_path(current_user) %><br/>
-      
       <%= @user.location %><br>
-      
+     
       <% @wk.each do |f| %>
         <%= f.company %><br/>
       <% end %>
