@@ -10,6 +10,9 @@ class WorkHistoriesController < ApplicationController
   end
   
   def create
+    puts"=========================="
+      puts params.inspect
+    puts"=========================="
     @wk = WorkHistory.new(params[:work_history])
     if @wk.save
       redirect_to work_histories_path

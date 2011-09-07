@@ -4,6 +4,10 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @skills = current_user.skills
     @work_histories = current_user.work_histories
+    @wk = current_user.work_histories
+    puts"=================================="
+      puts @wk.inspect
+    puts"=================================="
   end
 
   def edit

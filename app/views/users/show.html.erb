@@ -3,10 +3,14 @@
   <div class="content-left">
     <div class="content">
     <%= image_tag @user.avatar.url(:thumb) %><br/>
-      <%= link_to "edit", edit_user_path(current_user) %>
+      <%= link_to " Edit Profile", edit_user_path(current_user) %><br/>
       
-      <%= @user.location %><br>Company work for
-      <%= @user.mission_statement %>
+      <%= @user.location %><br>
+      
+      <% @wk.each do |f| %>
+        <%= f.company %><br/>
+      <% end %>
+      
       <div class="content">
         <%= @user.mission_statement %>
       </div>
@@ -16,24 +20,28 @@
       </div>
       
       <div class="content">
-        Work history<br/>
-        <%= link_to "Work_history", work_histories_path %><br/>
-        
+        <h3><b>Work history</h3></b>
         <% @work_histories.each do |f| %>
           Job Title: <%= f.title %><br/>
+          Company: <%= f.company %><br/>
           Description: <%= f.description %><br/>
+          Location: <%= f.location %><br/>
           Start-Date: <%= f.start_date %><br/>
           End-Date: <%= f.end_date %><br/>
-          ===========================<br/>
+          <%= link_to "edit", edit_work_history_path(f) %>
+          <%= link_to "Delete", work_history_path(f), :method => "DELETE" %><br/><br/>
         <% end %>
-        
+        <%= link_to "Add New Work History", new_work_history_path %><br/><br/>
       </div>
       
       <div class="content">
-        Skillz <%= link_to "skills", skills_path %><br/>
+       <h3><b> Skills </b></h3>
        <% @skills.each do |f| %>
           Skill:<%= f.name %> Rating:<%= f.rating  %><br/>
-       <% end %>
+          <%= link_to "edit", edit_skill_path(f) %>
+          <%= link_to "Delete", skill_path(f), :method => "DELETE" %> <br/><br/>
+       <% end %><br/>
+       <%= link_to "Add New Skill", new_skill_path %><br/><br/>
       </div>
       
       <div class="content">
