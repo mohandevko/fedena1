@@ -1,8 +1,14 @@
-<%= form_for(@skill) do |f| %>
-  <%= f.hidden_field :user_id, :value => @user.id %> <br />
-  Name:<%= f.text_field :name %> <br />
-  Rating:<%= f.text_field :rating %> <br />
-  <%= f.submit %>
-
+<%= form_for :skills, :url => mass_create_skills_path, :html => { :method => "POST" } do |f| %>
+  <%= fields_for "skills[]", @skill do |form| %>
+    <div class="skills-input">
+      <div class='skill-input'>
+        <%= form.text_field :name %>
+        <div class="rateable" data-rateit-min="0" data-rateit-max="5"><%= form.hidden_field :rating %></div>
+      </div>
+    </div>
+    
+    <%= link_to "New skill", "", :id => "new-skill" %>
+  <% end %>
+  
+  <%= f.submit "Create" %>
 <% end %>
-

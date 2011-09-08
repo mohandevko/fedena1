@@ -1,7 +1,8 @@
 <%= javascript_include_tag :all %>
 
 <% javascript_tag do %>
-  jQuery(".example-field").each(function() {
-    jQuery(this).example(jQuery(this).attr("title"));
+  jQuery(document).ready(function() {
+    initExampleFields();
+    initRateables();
   });
 <% end %>

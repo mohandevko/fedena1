@@ -2,6 +2,10 @@ a {
   color: dodgerblue;
 }
 
+a img {
+  border: none;
+}
+
 input[type=submit], button {
   background: none repeat scroll 0 0 #EEEEEE;
   border: 2px solid #555555;
@@ -11,4 +15,9 @@ input[type=submit], button {
 
 .notice, .alert {
   margin: 5px;
+}
+
+input.example {
+  color: #aaaaaa;
+  font-style: italic;
 }

@@ -35,12 +35,13 @@
       
       <div class="content">
        <h3><b> Skills </b></h3>
-       <% @skills.each do |f| %>
-          Skill:<%= f.name %> Rating:<%= f.rating  %><br/>
-          <%= link_to "edit", edit_skill_path(f) %>
-          <%= link_to "Delete", skill_path(f), :method => "DELETE" %> <br/><br/>
+       <% @skills.each do |skill| %>
+          <%= link_to image_tag("remove.gif").html_safe, skill_path(skill), :method => "DELETE" %>
+          <%= skill.name %> (<%= skill.rating.to_i %>)
+          
+          <br />
        <% end %><br/>
-       <%= link_to "Add New Skill", new_skill_path %><br/><br/>
+       <%= link_to "Add New Skill", mass_input_skills_path %><br/><br/>
       </div>
       
       <div class="content">

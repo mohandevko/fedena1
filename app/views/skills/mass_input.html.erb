@@ -1,0 +1,37 @@
+<h2>Update Skills</h2>
+
+<%= form_for :skills, :url => mass_create_skills_path, :html => { :method => "POST" } do |f| %>
+  <div class="existing-skills-input">
+    <% for skill in @skills do %>
+      <%= fields_for "existing_skills[]", skill do |form| %>
+        <div class='existing-skill-input'>
+          <%= link_to "", :onclick => "jQuery(this).parent().hide(); jQuery(this).parent().find('.removed').val(1); return false;" do %>
+            <%= image_tag "remove.gif" %>
+          <% end %>
+          
+          <%= form.hidden_field :removed, :class => "removed" %>
+          <%= form.text_field :name %>
+          <div class="rateable" data-rateit-min="0" data-rateit-max="5"><%= form.hidden_field :rating %></div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+
+  <%= fields_for "new_skills[]", @skill do |form| %>
+    <div class="new-skills-input">
+      <div class='new-skill-input'>
+        <%= link_to "", :onclick => "jQuery(this).parent().hide(); jQuery(this).parent().find('.removed').val(1); return false;" do %>
+          <%= image_tag "remove.gif" %>
+        <% end %>
+        
+        <%= form.hidden_field :removed, :class => "removed" %>
+        <%= form.text_field :name, :title => "Skill title", :class => "example-field" %>
+        <div class="rateable" data-rateit-min="0" data-rateit-max="5"><%= form.hidden_field :rating %></div>
+      </div>
+    </div>
+  <% end %>
+  
+  <%= link_to "Add new skill", "", :id => "new-skill" %> <br /><br />
+  
+  <%= f.submit "Submit" %>
+<% end %>

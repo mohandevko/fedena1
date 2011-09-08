@@ -5,9 +5,6 @@ class UsersController < ApplicationController
     @skills = current_user.skills
     @work_histories = current_user.work_histories
     @wk = current_user.work_histories
-    puts"=================================="
-      puts @wk.inspect
-    puts"=================================="
   end
 
   def edit
@@ -15,9 +12,6 @@ class UsersController < ApplicationController
   end
   
   def update
-    puts "==========================================="
-      puts params.inspect
-    puts "==========================================="
     current_user.update_attributes(params[:user])
     redirect_to :action => 'show'
   end
