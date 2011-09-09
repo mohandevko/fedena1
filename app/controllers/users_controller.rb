@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
 
   def show
+    @menu = "profile"
     @user = User.find(params[:id])
     @skills = current_user.skills
     @work_histories = current_user.work_histories
@@ -17,7 +18,7 @@ class UsersController < ApplicationController
   end
   
   def dashboard
-    
+    @menu = "dashboard"
   end
 
 end
