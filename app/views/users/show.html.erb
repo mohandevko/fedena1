@@ -19,7 +19,7 @@
       </div>
       
       <div class="content">
-        <h3><b>Work history</h3></b>
+        <h4><b>Work history</b></br></h4>
         <% @work_histories.each do |f| %>
           Job Title: <%= f.title %><br/>
           Company: <%= f.company %><br/>
@@ -33,15 +33,16 @@
         <%= link_to "Add New Work History", new_work_history_path %><br/><br/>
       </div>
       
+      
       <div class="content">
-       <h3><b> Skills </b></h3>
-       <% @skills.each do |skill| %>
-          <%= link_to image_tag("remove.gif").html_safe, skill_path(skill), :method => "DELETE" %>
-          <%= skill.name %> (<%= skill.rating.to_i %>)
-          
-          <br />
-       <% end %><br/>
-       <%= link_to "Add New Skill", mass_input_skills_path %><br/><br/>
+        <h4><b> Skills </b></h4>
+        <table>
+        <% @skills.each do |skill| %>
+        <tr><td><%= link_to image_tag("remove.gif").html_safe, skill_path(skill), :method => "DELETE" %></td>
+          <td>  <%= skill.name %></td><td> <div class='rateable' data-rateit-readonly='1' data-rateit-value="<%= skill.rating %>"></div></td></tr>
+        <% end %>
+        </table>
+        <%= link_to "Add New Skill", mass_input_skills_path %><br/><br/>
       </div>
       
       <div class="content">

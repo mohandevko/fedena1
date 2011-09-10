@@ -1,37 +1,5 @@
 class SkillsController < ApplicationController
-
-  def index
-    @skills = Skill.all
-  end
-  
-  def new
-    @skill = Skill.new
-  end
-  
-  def create
-    params[:skills].each do |skill_data|
-      skill_data[:user_id] = current_user.id
-      Skill.new(skill_data).save
-    end
-    redirect_to user_path(current_user)
-  end
-  
-  def edit
-    @skill = Skill.find(params[:id])
-    @user = @skill.user_id
-  end
-  
-  def update
-    @skill = Skill.find(params[:id])
-    if @skill.update_attributes(params[:skill])
-      redirect_to user_path(current_user)
-    else
-      render :action => 'edit'
-    end
-  end
-  
-  
- def destroy
+  def destroy
     @skill = Skill.find(params[:id])
     @skill.destroy
     redirect_to user_path(current_user)
