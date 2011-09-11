@@ -5,11 +5,11 @@
     <%= image_tag @user.avatar.url(:thumb) %><br/>
       <%= link_to " Edit Profile", edit_user_path(current_user) %><br/>
       <%= @user.location %><br>
-     
+
       <% @wk.each do |f| %>
         <%= f.company %><br/>
       <% end %>
-      
+
       <div class="content">
         <%= @user.mission_statement %>
       </div>
@@ -17,7 +17,7 @@
       <div class="content">
         Shared contacts
       </div>
-      
+
       <div class="content">
         <h4><b>Work history</b></br></h4>
         <% @work_histories.each do |f| %>
@@ -32,8 +32,8 @@
         <% end %>
         <%= link_to "Add New Work History", new_work_history_path %><br/><br/>
       </div>
-      
-      
+
+
       <div class="content">
         <h4><b> Skills </b></h4>
         <table>
@@ -44,12 +44,13 @@
         </table>
         <%= link_to "Add New Skill", mass_input_skills_path %><br/><br/>
       </div>
-      
+
       <div class="content">
         Education
         <%= link_to "Education", new_education_path %>
+        <%= @e.qualification %>
       </div>
-      
+
     </div>
   </div>
 

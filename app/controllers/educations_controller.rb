@@ -1,16 +1,17 @@
 class EducationsController < ApplicationController
   def new
     @user_id = current_user.id
-    @education = Education.new
+    @e = Education.new
   end
-  
+
   def create
-    @education = Eduction.new(params[:education])
-    if @education.save
+
+    @e = Education.new(params[:education])
+    if @e.save
       redirect_to user_path(current_user)
     else
       render :action => 'new'
     end
   end
-  
+
 end
