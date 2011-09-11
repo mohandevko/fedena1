@@ -13,6 +13,7 @@ TechCredentials::Application.routes.draw do
   end
   
   resources :work_histories
+  resources :educations
   resources :users, :only => [:edit, :update, :show] do
     member do
       get :dashboard
