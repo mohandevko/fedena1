@@ -13,4 +13,9 @@ class EducationsController < ApplicationController
     end
   end
 
+  def edit
+    #@user_id = current_user.id
+    #@edu = Education.find(current_user)
+  end
+
 end

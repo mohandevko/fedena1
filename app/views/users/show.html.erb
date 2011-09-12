@@ -46,7 +46,11 @@
       </div>
 
       <div class="content">
-        Education
+        <h4><b> Education </b></h4>
+        <% @edu.each do |f| %>
+          <%= f.qualification %><br/>
+        <% end %>
+        <%= link_to "Add Education", new_education_path %>
       </div>
 
     </div>
