@@ -11,12 +11,12 @@ class UsersController < ApplicationController
   def edit
       @user = current_user
   end
-  
+
   def update
     current_user.update_attributes(params[:user])
     redirect_to :action => 'show'
   end
-  
+
   def dashboard
     @menu = "dashboard"
   end
