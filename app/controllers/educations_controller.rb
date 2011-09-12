@@ -5,7 +5,7 @@ class EducationsController < ApplicationController
   end
   
   def create
-    @education = Eduction.new(params[:education])
+    @education = Eduction.new(params[:educations])
     if @education.save
       redirect_to user_path(current_user)
     else
