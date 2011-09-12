@@ -10,7 +10,9 @@
           <% end %>
 
           <%= form.hidden_field :removed, :class => "removed" %>
-          <%= form.text_field :qualification %>
+          Qualification:<%= form.text_field :qualification %><br/>
+          Percentage:<%= form.text_field :percentage %>
+          Year<%= form.text_field :year %><br/><br/><br/>
 
         </div>
       <% end %>
@@ -25,7 +27,9 @@
         <% end %>
 
          <%= form.hidden_field :removed, :class => "removed" %>
-        <%= form.text_field :qualification, :qualification => "education qualification", :class => "example-field" %>
+        Qualification:<%= form.text_field :qualification, :qualification => "education qualification", :class => "example-field" %><br/>
+        Percentage:<%= form.text_field :percentage, :percentage => "education percentage", :class => "example-field" %>
+        year:<%= form.text_field :year, :year => "education year", :class => "example-field" %><br/>
       </div>
     </div>
   <% end %>
