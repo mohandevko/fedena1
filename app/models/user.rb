@@ -15,11 +15,7 @@ class User < ActiveRecord::Base
     has_many :skills
     has_many :work_histories
     has_many :educations
-<<<<<<< HEAD
-  
-=======
 
->>>>>>> e3a2f68cb6ec0a418d3b8b91e8bab55af689977a
   # For omniauth
     def self.create_from_hash!(hash)
       u = User.new(hash)
