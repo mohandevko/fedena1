@@ -47,10 +47,11 @@
 
       <div class="content">
         <h4><b> Education </b></h4>
-        <% @edu.each do |f| %>
-          <%= f.qualification %><br/>
+        <% @edu.each do |education| %>
+          <td><%= link_to image_tag("remove.gif").html_safe, education_path(education), :method => "DELETE" %></td>
+          <%= education.qualification %><br/>
         <% end %>
-        <%= link_to "Add Education", new_education_path %>
+        <%= link_to "Add New education", mass_input_educations_path %><br/><br/>
       </div>
 
     </div>

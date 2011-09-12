@@ -1,21 +1,34 @@
 class EducationsController < ApplicationController
-  def new
-    @user_id = current_user.id
-    @e = Education.new
+  def destroy
+    @education = Education.find(params[:id])
+    @education.destroy
+    redirect_to user_path(current_user)
   end
 
-  def create
-    @e = Education.new(params[:education])
-    if @e.save
-      redirect_to user_path(current_user)
-    else
-      render :action => 'new'
+  def mass_input
+    @educations = Education.all
+    @education = Education.new
+  end
+
+  def mass_create
+    (params[:existing_educations] || {}).each do |id, education_data|
+      education = Education.find(id)
+      if education_data[:removed] == "1"
+        education.destroy
+      else
+        education.update_attributes(education_data)
+      end
     end
-  end
 
-  def edit
-    #@user_id = current_user.id
-    #@edu = Education.find(current_user)
+    (params[:new_educations] || []).each do |education_data|
+      if education_data[:removed] != "1"
+        education_data[:user_id] = current_user.id
+        education = Education.new(education_data)
+        education.save
+      end
+    end
+
+    redirect_to user_path(current_user)
   end
 
 end

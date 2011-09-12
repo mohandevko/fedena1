@@ -11,7 +11,14 @@ TechCredentials::Application.routes.draw do
       post :mass_create
     end
   end
-  
+
+  resources :educations do
+    collection do
+      get :mass_input
+      post :mass_create
+    end
+  end
+
   resources :work_histories
   resources :educations
   resources :users, :only => [:edit, :update, :show] do
@@ -19,6 +26,6 @@ TechCredentials::Application.routes.draw do
       get :dashboard
     end
   end
-  
+
   root :to => "home#index"
 end

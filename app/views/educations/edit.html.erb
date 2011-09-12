@@ -1,2 +1,7 @@
-<%= render 'form' %>
-<%= link_to "cancel", user_path(current_user) %>
+<%= form_for(@e) do |f| %>
+  User_id: <%= f.text_field :user_id, :value => @user_id %> <br />
+  qualification: <%= f.text_field :qualification %> <br />
+  Year: <%= f.text_field :year %> <br />
+  Percentage: <%= f.text_field :percentage %> <br />
+  <%= f.submit %>
+<% end %>
