@@ -5,7 +5,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @skills = current_user.skills
     @work_histories = current_user.work_histories
-    @e = Education.find_all_by_user_id(current_user.id)
+    @educations = current_user.educations
     @wk = current_user.work_histories
   end
 
