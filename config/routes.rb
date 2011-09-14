@@ -12,6 +12,13 @@ TechCredentials::Application.routes.draw do
     end
   end
   
+  resources :invite do
+    collection do
+      get :invite_friends
+      post :import
+    end
+  end
+  
   resources :work_histories
   resources :educations
   resources :users, :only => [:edit, :update, :show] do
