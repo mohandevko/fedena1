@@ -1,0 +1,40 @@
+<h2>Update educations</h2>
+
+<%= form_for :educations, :url => mass_create_educations_path, :html => { :method => "POST" } do |f| %>
+  <div class="existing-educations-input">
+    <% for education in @educations do %>
+      <%= fields_for "existing_educations[]", education do |form| %>
+        <div class='existing-education-input'>
+          <%= link_to "", :onclick => "jQuery(this).parent().hide(); jQuery(this).parent().find('.removed').val(1); return false;" do %>
+            <%= image_tag "remove.gif" %>
+          <% end %>
+
+          <%= form.hidden_field :removed, :class => "removed" %>
+          Qualification:<%= form.text_field :qualification %><br/>
+          Percentage:<%= form.text_field :percentage %>
+          Year<%= form.text_field :year %><br/><br/><br/>
+
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+
+  <%= fields_for "new_educations[]", @education do |form| %>
+    <div class="new-educations-input">
+      <div class='new-education-input'>
+        <%= link_to "", :onclick => "jQuery(this).parent().hide(); jQuery(this).parent().find('.removed').val(1); return false;" do %>
+          <%= image_tag "remove.gif" %>
+        <% end %>
+
+         <%= form.hidden_field :removed, :class => "removed" %>
+        Qualification:<%= form.text_field :qualification, :qualification => "education qualification", :class => "example-field" %><br/>
+        Percentage:<%= form.text_field :percentage, :percentage => "education percentage", :class => "example-field" %>
+        year:<%= form.text_field :year, :year => "education year", :class => "example-field" %><br/>
+      </div>
+    </div>
+  <% end %>
+
+  <%= link_to "Add new education", "", :id => "new-skill" %> <br /><br />
+
+  <%= f.submit "Submit" %>
+<% end %>
