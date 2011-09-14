@@ -9,7 +9,7 @@ class InviteController < ApplicationController
   def import
     @users = User.find(params[:id])
     begin
-      @sites = {“gmail”  => Contacts::Gmail }
+      @sites = {“facebook”  => Contacts::Facebook }
       @contacts = @sites[params[:from]].new(params[:login], params[:password]).contacts
       @users , @no_users = [], []
       @contacts.each do |contact|
