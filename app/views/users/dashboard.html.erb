@@ -25,6 +25,16 @@
       </div>
       <div class="content">
         My Skillz/Keywords [edit] [promote]
+        
+         <h4><b> Skills </b></h4>
+        <table>
+        <% @skills.each do |skill| %>
+        <tr><td><%= link_to image_tag("remove.gif").html_safe, skill_path(skill), :method => "DELETE" %></td>
+          <td>  <%= skill.name %></td><td> <div class='rateable' data-rateit-readonly='1' data-rateit-value="<%= skill.rating %>"></div></td></tr>
+        <% end %>
+        </table>
+        <%= link_to "Add New Skill", mass_input_skills_path %><br/><br/>
+        
       </div>
     </div>
   </div>

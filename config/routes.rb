@@ -12,12 +12,8 @@ TechCredentials::Application.routes.draw do
     end
   end
   
-  resources :invite do
-    collection do
-      get :invite_friends
-      post :import
-    end
-  end
+  get "/invites/invite_friends" => "invites#invite_friends", :as => :invite_friends
+  post "/invites/import" => "invites#import", :as => :import
   
 
   resources :educations do
