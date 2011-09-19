@@ -15,6 +15,7 @@ class User < ActiveRecord::Base
     has_many :skills
     has_many :work_histories
     has_many :educations
+    has_many :invitations
 
   # For omniauth
     def self.create_from_hash!(hash)

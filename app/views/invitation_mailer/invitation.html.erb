@@ -1,0 +1,7 @@
+Hello, <br /><br />
+
+<%= @invitation.user.to_s %> has invited you to join TechCredentials. Please click on the below link or copy and paste the below url in your browser to join TechCredentials.
+
+<br /><br />
+
+<%= link_to new_user_registration_url(:token => @invitation.token),  new_user_registration_url(:token => @invitation.token) %>

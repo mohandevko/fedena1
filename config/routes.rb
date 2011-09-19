@@ -14,6 +14,7 @@ TechCredentials::Application.routes.draw do
   
   get "/invites/invite_friends" => "invites#invite_friends", :as => :invite_friends
   post "/invites/import" => "invites#import", :as => :import
+  post "/invites/invite" => "invites#invite", :as => :invite
   
 
   resources :educations do

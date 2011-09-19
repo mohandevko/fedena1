@@ -1,0 +1,12 @@
+<% form_for "invite", :url => invite_path do %>
+  <div class="content_list_header">
+    <h1><b>Invite Friends</h1></b>
+  </div>
+  <div class="contact_list">
+    <% for i in @contacts %>
+      <input type="checkbox" name="email[]"  value="<%= i[1] %>" /><%= i[1] %><br>
+    <% end %>
+  </div>
+   <%= submit_tag "Invite" %>
+<% end %>
+

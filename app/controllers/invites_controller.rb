@@ -16,10 +16,18 @@ class InvitesController < ApplicationController
             @no_users << {:name => contact[0] , :email => contact[1]}
           end
         end
-        respond_to do |format|
-          format.html {render :template => 'invites/_contact_list', :layout => false}
-          format.xml {render :xml => @contacts.to_xml}
-        end
       end
   end
+  
+  def invite
+    a = params[:email]
+    a.each do |i|
+      invitation = Invitation.new
+      invitation.user_id = current_user.id
+      invitation.email = i
+      invitation.save
+    end
+    redirect_to invite_friends_path
+  end
+  
 end
