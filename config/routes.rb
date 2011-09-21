@@ -16,6 +16,9 @@ TechCredentials::Application.routes.draw do
   post "/invites/import" => "invites#import", :as => :import
   post "/invites/invite" => "invites#invite", :as => :invite
   
+  get "/auth/index" => "auth#index", :as => :index
+  get "/auth/callback" => "auth#callback", :as => :callback
+  
 
   resources :educations do
     collection do

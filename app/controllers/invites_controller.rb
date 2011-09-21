@@ -4,9 +4,9 @@ class InvitesController < ApplicationController
   end
 
   def import
-    
+
       begin
-        @sites = {"gmail"  => Contacts::Gmail, "yahoo" => Contacts::Yahoo, "hotmail" => Contacts::Hotmail}
+        @sites = {"hotmail" => Contacts::Hotmail, "gmail"  => Contacts::Gmail, "yahoo" => Contacts::Yahoo}
         @contacts = @sites[params[:from]].new(params[:login], params[:password]).contacts
         @users , @no_users = [], []
         @contacts.each do |contact|

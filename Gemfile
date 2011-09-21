@@ -10,6 +10,7 @@ gem 'warden'
 gem 'omniauth'
 gem "hpricot"
 gem 'contacts'
+gem 'linkedin'
 
 
 gem "paperclip", "~> 2.3"

@@ -53,6 +53,9 @@ GEM
       railties (~> 3.0)
       thor (~> 0.14)
     json (1.6.0)
+    linkedin (0.2.2)
+      nokogiri (~> 1.4.4)
+      oauth (~> 0.4.0)
     mail (2.2.19)
       activesupport (>= 2.3.6)
       i18n (>= 0.4.0)
@@ -156,6 +159,7 @@ DEPENDENCIES
   devise
   hpricot
   jquery-rails
+  linkedin
   mysql2 (~> 0.2.6)
   omniauth
   orm_adapter

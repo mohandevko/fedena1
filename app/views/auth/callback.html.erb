@@ -1,0 +1,7 @@
+<h1><b> Contacts from linkedin </b></h1>
+<div class="contact_list">
+    <% for i in @connections %>
+      <b>Contact:</b> <%= i.first_name %><br/><b>Location:</b> <%= i.id  %><br/><b>Headline:</b> <%= i.headline %><br/><b>Industry:</b> <%= i.industry %><br><br/><br/>
+    <% end %>
+</div>
+    
