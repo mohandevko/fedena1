@@ -2,6 +2,7 @@
   <%= link_to image_tag("TC-logo-1.jpg"), root_path %> 
 </div>
 
+<div style="float: right;">
 <div id="session">
   <% if signed_in? %>
     Welcome, <%= current_user.to_s %>
@@ -11,9 +12,21 @@
   <% end %>
 </div>
 
+<div class="ui-helper-clearfix">
+</div>
+
+<div class="search">
+  <%= form_for :search, :url => result_path, :html => { :method => "GET" } do |f| %>
+    <input value="" name="s" id="s" />
+    <%= f.submit "Search" %>
+  <% end %>
+</div>
+</div>
+
 <div id="navigation-menu">
   <ul class="ui-helper-clearfix">
     <% if user_signed_in? %>
+
         <% if @menu == "profile" %>
             <li class="selected">
               <%= link_to "Profile", user_path(current_user) %>
@@ -23,7 +36,7 @@
               <%= link_to "Profile", user_path(current_user) %>
             </li>
         <% end %>
-                
+
         <% if @menu == "dashboard" %>
                <li class="selected">
                    <%= link_to "Dashboard", dashboard_user_path(current_user) %>
@@ -33,7 +46,15 @@
                 <%= link_to "Dashboard", dashboard_user_path(current_user) %>
              </li>
        <% end %>
-    <% end %>
+       
+        
+        
+        
+     <% end %>
   </ul>
-
+  
 </div>
+
+
+
+

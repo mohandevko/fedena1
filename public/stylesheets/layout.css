@@ -30,6 +30,17 @@ body {
   width:30%;
 }
 
+.searchcontent-left {
+  float: left;
+  width:30%;
+}
+
+.searchcontent-right {
+  float: right;
+  width:70%;
+}
+
+
 #footer {
   border-top: 1px solid #37383C;
   padding: 10px 0;

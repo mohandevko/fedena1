@@ -19,6 +19,9 @@ TechCredentials::Application.routes.draw do
   get "/auth/index" => "auth#index", :as => :index
   get "/auth/callback" => "auth#callback", :as => :callback
   
+  get "/search/search" => "search#search", :as => :search
+  get "/search/result" => "search#result", :as => :result
+  
 
   resources :educations do
     collection do

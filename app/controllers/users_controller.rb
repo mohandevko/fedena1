@@ -26,5 +26,5 @@ class UsersController < ApplicationController
     @wk = current_user.work_histories
     @edu = Education.find_all_by_user_id(current_user.id)
   end
-
+  
 end

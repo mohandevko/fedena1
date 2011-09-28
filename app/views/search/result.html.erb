@@ -1,0 +1,53 @@
+<h2>Search Page </h2>
+
+<div class="ui-helper-clearfix">
+  <div class="searchcontent-left">
+    <div class = "content">
+      <br/><br/><br/>
+      <b>Search Filters</b><br/><br/><br/><br/><br/>
+      <b>Recommended Users</b><br/><br/><br/><br/><br/>
+      <b>Advertisements?</b></br/><br/><br/><br/><br/><br/><br/><br/><br/>
+    </div>
+  </div>
+    
+
+
+    <div class="searchcontent-right">
+      <div class ="content">
+        <% @users.each do |i| %>
+          <br/><b>User:</b> <%= i %><br/>
+          <b>Email Id:</b> <%= i.email %><br/><br/>
+          <% @flag = true %>
+        <% end %>
+
+        <% @skills.each do |i| %>
+           <% @user_id = i.user_id %><br/>
+           <% @user = User.find(@user_id) %><br/>
+           <% @person = @user %>
+           <h4><b>Searched Results by Skill</b></h4>
+           <b>User:</b> <%= @person %><br/>
+           <b>Email Id:</b> <%= @person.email %><br/>
+           <b>Skill:</b> <%= i.name %><br/><br/>
+           <% @flag = true %>
+        <% end %>
+
+        <% @educations.each do |i| %>
+           <% @user_id = i.user_id %><br/>
+           <% @user = User.find(@user_id) %><br/>
+           <% @person = @user %>
+           <h4><b>Searched Results by Educations</b></h4>
+           <b>User:</b> <%= @person %><br/>
+           <b>Email Id:</b> <%= @person.email %><br/>
+           <b>Qualification:</b> <%= i.qualification %><br/><br/>
+           <% @flag = true %>
+        <% end %>
+        
+        <% if @flag == true %>
+        <% else %>
+          <br/><br/><br/>Search Not Found <br/><br/>
+          Please Try Again<br/><br/><br/>
+        <% end %>
+        
+      </div>  
+    </div>
+</div>
