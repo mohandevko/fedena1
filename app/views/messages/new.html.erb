@@ -1,0 +1,12 @@
+<%= form_for (:message, :url => messages_path) do |f| %>
+  <%= f.hidden_field :sender_id, :value => @sender_id %><br/>
+  To <%= f.select :receiver_id, options_for_select(@users.collect{|u| [u.email, u.id]}) %><br/><br/>
+  Subject: <%= f.text_field :subject %><br/><br/>
+  Body: <%= f.text_area :body %><br /><br />
+  <%= f.hidden_field :replying_user_id, :value => @current_user.id %>
+  <%= f.submit "Send" %> 
+<% end %> 
+
+<%= link_to "Inbox", messages_path %> 
+
+

@@ -51,7 +51,19 @@
         Profile Progress
       </div>
       <div class="content">
-        New Messages
+          <div class="mainDiv">
+            <div calss="showDiv">
+              <button> Messages</button>
+            </div>
+            <div class ="slideDiv">
+              <div class="messages">
+                <%= link_to "Inbox", messages_path %><br/> 
+                <%= link_to "Send Message", new_message_path %><br />
+                <%= link_to "Sent Messages", sent_messages_path %>
+              </div>
+            </div>
+          </div>
+        
       </div>
       <div class="content">
         Profile Meta Stats

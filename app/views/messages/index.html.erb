@@ -1,0 +1,25 @@
+<table border=1>
+<tr>
+<th>Sender: </th>
+<th>Subject: </th>
+<th>Body: </th>
+<th>Links: </th>
+</tr>
+
+<% @messages.each do |i| %>
+<tr>
+
+  <% @sender = User.find(i.sender_id) %><br />
+  <% @receiver = User.find(i.receiver_id) %>
+  <td cellspan="2"> <%= @sender %></td>
+  <td cellspan="2"><%= i.subject %></td>
+  <td cellpan="2"><%= link_to  i.body %><td>
+  <%= link_to "Reply", new_message_path %>||
+  <%= link_to "Delete", message_path(i), :method => "DELETE" %> 
+
+  </tr>
+<% end %>
+
+</table>
+
+<br/><%= link_to "New Message", new_message_path %>

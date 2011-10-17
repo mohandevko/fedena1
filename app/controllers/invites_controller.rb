@@ -20,6 +20,9 @@ class InvitesController < ApplicationController
   end
   
   def invite
+    puts "==================="
+    puts params.inspect
+    puts "==================="
     a = params[:email]
     a.each do |i|
       invitation = Invitation.new

@@ -16,6 +16,8 @@ class User < ActiveRecord::Base
     has_many :work_histories
     has_many :educations
     has_many :invitations
+    has_many :sent_messages, :class_name => "Message", :foreign_key => :sender_id
+    has_many :received_messages, :class_name => "Message", :foreign_key => :receiver_id
 
   # For omniauth
     def self.create_from_hash!(hash)
