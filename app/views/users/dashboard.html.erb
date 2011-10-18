@@ -51,6 +51,7 @@
         Profile Progress
       </div>
       <div class="content">
+        <b>Messages</b>
           <div class="mainDiv">
             <div calss="showDiv">
               <button> Messages</button>
@@ -66,13 +67,29 @@
         
       </div>
       <div class="content">
-        Profile Meta Stats
+        <b>Profile Status</b><br /><br />
+          <% if current_user.status_message == nil %>
+            <%= link_to "Add Stats", edit_status_user_path, :remote => true %>
+          <% else %>
+            <b><%= current_user.status_message %></b><br />
+            <%= link_to "Edit Stats", edit_status_user_path, :remote => true %>
+          <% end %>
+        <div class="editstatus">
+        </div>
       </div>
       <div class="content">
         View Profile
       </div>
       <div class="content">
-        Add Position
+        <b>Position</b><br /><br />
+          <% if current_user.position == nil %>
+            <%= link_to "Add Poition", edit_position_user_path, :remote => true %>
+          <% else %>
+            <b><%= current_user.position %></b><br />
+            <%= link_to "Edit Position", edit_position_user_path, :remote => true %>
+          <% end %>
+          <div class="position">
+          </div>
       </div>
       <div class="content">
         Advertisements?

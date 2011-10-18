@@ -27,4 +27,31 @@ class UsersController < ApplicationController
     @edu = Education.find_all_by_user_id(current_user.id)
   end
   
+  def edit_status
+  end
+  
+  def updatestatus
+    @user = current_user
+    @user.update_attributes(params[:user])
+    redirect_to :action => "dashboard"
+  end
+  
+  def edit_position
+  end
+  def update_position
+    puts "===================="
+       puts params.inspect
+    puts "===================="
+    
+    @user = current_user
+    @user.update_attributes(params[:user])
+    
+    puts "===================="
+       puts @user.inspect
+    puts "===================="
+    
+    redirect_to :action => "dashboard"
+  end
+  
+  
 end

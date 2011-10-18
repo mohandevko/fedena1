@@ -1,0 +1,6 @@
+<% form_for current_user, :user, :url => update_position_user_path(current_user), :html => { :method => "POST" } do %>
+   
+    <%= text_field :user, :position, :size => 10 %>
+
+    <%= submit_tag 'Create' %>
+<% end %>

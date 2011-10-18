@@ -21,3 +21,10 @@ jQuery("#new-skill").each(function() {
     initRateables();
   });
 });
+
+$(document).ready(function(){
+  $('div.slideDiv').hide();
+    $("button").click(function(){
+      $("div.slideDiv").slideToggle();
+  });
+});

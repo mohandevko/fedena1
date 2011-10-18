@@ -39,7 +39,9 @@ TechCredentials::Application.routes.draw do
   resources :educations
   resources :users, :only => [:edit, :update, :show] do
     member do
-      get :dashboard
+      get :dashboard, :edit_status, :edit_position
+      post :updatestatus, :update_position
+      
     end
   end
 
