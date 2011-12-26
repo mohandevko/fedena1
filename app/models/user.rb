@@ -7,9 +7,10 @@ class User < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me,
                   :first_name, :last_name, :avatar, :phone, :mission_statement, 
-                  :email_subscription, :location, :status_message, :position
+                  :email_subscription, :location, :status_message, :position, :resume
 
   has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }
+  has_attached_file :resume
 
   # Associations
     has_many :authorizations, :dependent => :destroy

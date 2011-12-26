@@ -1,7 +1,8 @@
 <h2>user profile edit </h2>
 
 <% form_for :user, :url => user_path(current_user), :html => { :method => "PUT", :multipart => true } do |form| %>
-  <%= form.file_field :avatar %><br/>
+  Profile Photo: <%= form.file_field :avatar %><br/>
+  Upload Resume: <%= form.file_field :resume %><br/>
   <%= form.text_area :mission_statement, :cols => 25, :rows => 2 %><br/>
   <%= link_to "skills", new_skill_path %>
   <%= submit_tag %>
